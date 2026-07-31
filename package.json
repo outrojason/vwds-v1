@@ -1,0 +1,19 @@
+{
+  "name": "vwds",
+  "version": "0.1.0",
+  "description": "Vinta Website Design System - fonte de verdade de tokens e componentes",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "tokens": "node config/style-dictionary.config.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "style-dictionary": "^5.5.0"
+  },
+  "type": "module"
+}

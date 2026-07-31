@@ -1,0 +1,173 @@
+{
+  "$description": "VWDS — Vinta Website Design System · tokens v0 (draft) · Decisões aprovadas em 23/07/2026: azul canônico #0052FF, taxonomia tipográfica MUI, Spectral como família editorial, Text/Dark/Primary #030E23. Estrutura em 3 camadas: primitive → semantic → component.",
+  "primitive": {
+    "color": {
+      "$type": "color",
+      "blue": {
+        "300": { "$value": "#728AFF", "$description": "ex --vinta-blue-lighter" },
+        "400": { "$value": "#3274FF", "$description": "ex --vinta-blue-light / Vinta/Light" },
+        "500": { "$value": "#0052FF", "$description": "CANÔNICO · ex Vinta/Main (Figma 2025). Substitui #0050FF" },
+        "600": { "$value": "#002FDB", "$description": "ex --vinta-darker" }
+      },
+      "navy": {
+        "900": { "$value": "#030E23", "$description": "ex --dark-mode-blue / Text/Dark/Primary (Figma 2025). Substitui #081322" },
+        "800": { "$value": "#152343", "$description": "ex --midnight-blue-2" },
+        "700": { "$value": "#263651", "$description": "ex --text-dark-secondary" },
+        "600": { "$value": "#3E4966", "$description": "ex --gray-blue-paragraph" },
+        "500": { "$value": "#465A78", "$description": "ex --text-dark-tertiary" }
+      },
+      "steel": {
+        "400": { "$value": "#7D95C6", "$description": "consolida --cornflower-blue (#7e95c6) + duplicata (#7d95c6)" },
+        "300": { "$value": "#A3ACBE", "$description": "ex --metal-gray" },
+        "200": { "$value": "#B3BFD8", "$description": "ex --light-steel-blue" },
+        "150": { "$value": "#C1D1EB", "$description": "ex --light-blue-text" },
+        "100": { "$value": "#DFE6F6", "$description": "ex --lavender-header" },
+        "50":  { "$value": "#EAEFF9", "$description": "ex --primary-gray-background" }
+      },
+      "ice": {
+        "50": { "$value": "#E5EAFD", "$description": "ex --text-light-primary" }
+      },
+      "darkmode": {
+        "text-muted": { "$value": "#97B1DC", "$description": "ex --paragraph-text-color-dark-mode" },
+        "text-subtle": { "$value": "#7D8DAA", "$description": "ex --vwds-gray-text-primary" },
+        "surface": { "$value": "#050508", "$description": "ex --vwds-darkmode" }
+      },
+      "white": { "$value": "#FFFFFF" }
+    },
+    "font": {
+      "family": {
+        "$type": "fontFamily",
+        "brand": { "$value": ["Moderat", "Arial", "sans-serif"], "$description": "Pesos licenciados em produção: 100, 300, 400, 700. NUNCA usar famílias fantasma ('Moderat Bold' etc.)" },
+        "editorial": { "$value": ["Spectral", "Georgia", "serif"], "$description": "APROVADO: serif editorial · blog agora, páginas de case futuramente. Pesos: 200–700" }
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "thin": { "$value": 100 },
+        "light": { "$value": 300 },
+        "regular": { "$value": 400 },
+        "bold": { "$value": 700 }
+      }
+    },
+    "dimension": {
+      "$type": "dimension",
+      "space": {
+        "1": { "$value": "4px" }, "2": { "$value": "8px" }, "3": { "$value": "12px" },
+        "4": { "$value": "16px" }, "6": { "$value": "24px" }, "8": { "$value": "32px" },
+        "10": { "$value": "40px" }, "12": { "$value": "48px" }, "16": { "$value": "64px" },
+        "24": { "$value": "96px" }, "32": { "$value": "128px" },
+        "$description": "Escala 8pt (com meio-passo 4/12). Consolida os gaps 8/10/16/24/32/40/64 encontrados em produção — o valor 10px migra para 8 ou 12"
+      },
+      "radius": {
+        "sm": { "$value": "4px", "$description": "consolida 2–5px" },
+        "md": { "$value": "8px", "$description": "consolida 6–11px (inclui o 6.25092px quebrado)" },
+        "lg": { "$value": "16px", "$description": "consolida 12–24px" },
+        "full": { "$value": "9999px", "$description": "consolida 48/50/100px (pills)" }
+      }
+    },
+    "shadow": {
+      "$type": "shadow",
+      "elevation-1": { "$value": { "offsetX": "0", "offsetY": "1px", "blur": "3px", "spread": "0", "color": "#03102314" }, "$description": "cards em repouso" },
+      "elevation-2": { "$value": { "offsetX": "0", "offsetY": "4px", "blur": "16px", "spread": "0", "color": "#0310231F" }, "$description": "cards em hover / dropdowns" },
+      "elevation-3": { "$value": { "offsetX": "0", "offsetY": "8px", "blur": "32px", "spread": "0", "color": "#03102329" }, "$description": "modais / elementos flutuantes. TBD: validar visualmente contra as sombras da 2025 antes de fixar" }
+    },
+    "breakpoint": {
+      "$type": "dimension",
+      "tablet": { "$value": "991px" },
+      "mobile-landscape": { "$value": "767px" },
+      "mobile": { "$value": "479px" },
+      "$description": "Herdados do Webflow para paridade na migração"
+    }
+  },
+  "semantic": {
+    "color": {
+      "$type": "color",
+      "light": {
+        "text": {
+          "primary": { "$value": "{primitive.color.navy.900}" },
+          "secondary": { "$value": "{primitive.color.navy.700}" },
+          "tertiary": { "$value": "{primitive.color.navy.500}" },
+          "on-action": { "$value": "{primitive.color.white}" },
+          "link": { "$value": "{primitive.color.blue.500}" }
+        },
+        "surface": {
+          "page": { "$value": "{primitive.color.white}" },
+          "subtle": { "$value": "{primitive.color.steel.50}" },
+          "muted": { "$value": "{primitive.color.steel.100}" }
+        },
+        "action": {
+          "primary": { "$value": "{primitive.color.blue.500}" },
+          "primary-hover": { "$value": "{primitive.color.blue.600}" },
+          "primary-active": { "$value": "{primitive.color.blue.600}" }
+        },
+        "border": {
+          "default": { "$value": "{primitive.color.steel.200}" },
+          "strong": { "$value": "{primitive.color.navy.900}" }
+        }
+      },
+      "dark": {
+        "text": {
+          "primary": { "$value": "{primitive.color.ice.50}" },
+          "secondary": { "$value": "{primitive.color.darkmode.text-muted}" },
+          "tertiary": { "$value": "{primitive.color.darkmode.text-subtle}" },
+          "on-action": { "$value": "{primitive.color.white}" },
+          "link": { "$value": "{primitive.color.blue.400}" }
+        },
+        "surface": {
+          "page": { "$value": "{primitive.color.navy.900}" },
+          "subtle": { "$value": "{primitive.color.darkmode.surface}" },
+          "muted": { "$value": "{primitive.color.navy.800}" }
+        },
+        "action": {
+          "primary": { "$value": "{primitive.color.blue.500}" },
+          "primary-hover": { "$value": "{primitive.color.blue.400}" },
+          "primary-active": { "$value": "{primitive.color.blue.400}" }
+        },
+        "border": {
+          "default": { "$value": "{primitive.color.navy.800}" },
+          "strong": { "$value": "{primitive.color.ice.50}" }
+        }
+      }
+    },
+    "typography": {
+      "$type": "typography",
+      "$description": "Taxonomia MUI (aprovada). Tamanhos base desktop reconciliados com produção; line-heights consolidados em 3 valores (110% display, 130% headings, 150% body). Responsivo definido na Fase 4.",
+      "h1": { "$value": { "fontFamily": "{primitive.font.family.brand}", "fontWeight": "{primitive.font.weight.thin}", "fontSize": "56px", "lineHeight": "1.1" } },
+      "h2": { "$value": { "fontFamily": "{primitive.font.family.brand}", "fontWeight": "{primitive.font.weight.thin}", "fontSize": "40px", "lineHeight": "1.3" } },
+      "h3": { "$value": { "fontFamily": "{primitive.font.family.brand}", "fontWeight": "{primitive.font.weight.light}", "fontSize": "32px", "lineHeight": "1.3" } },
+      "h4": { "$value": { "fontFamily": "{primitive.font.family.brand}", "fontWeight": "{primitive.font.weight.regular}", "fontSize": "24px", "lineHeight": "1.3" } },
+      "h5": { "$value": { "fontFamily": "{primitive.font.family.brand}", "fontWeight": "{primitive.font.weight.bold}", "fontSize": "20px", "lineHeight": "1.3" } },
+      "h6": { "$value": { "fontFamily": "{primitive.font.family.brand}", "fontWeight": "{primitive.font.weight.bold}", "fontSize": "18px", "lineHeight": "1.3" } },
+      "subtitle1": { "$value": { "fontFamily": "{primitive.font.family.brand}", "fontWeight": "{primitive.font.weight.regular}", "fontSize": "18px", "lineHeight": "1.5" } },
+      "subtitle2": { "$value": { "fontFamily": "{primitive.font.family.brand}", "fontWeight": "{primitive.font.weight.bold}", "fontSize": "16px", "lineHeight": "1.5" } },
+      "body1": { "$value": { "fontFamily": "{primitive.font.family.brand}", "fontWeight": "{primitive.font.weight.regular}", "fontSize": "16px", "lineHeight": "1.5" } },
+      "body2": { "$value": { "fontFamily": "{primitive.font.family.brand}", "fontWeight": "{primitive.font.weight.regular}", "fontSize": "14px", "lineHeight": "1.5" } },
+      "overline": { "$value": { "fontFamily": "{primitive.font.family.brand}", "fontWeight": "{primitive.font.weight.bold}", "fontSize": "12px", "lineHeight": "1.5", "letterSpacing": "0.08em", "textTransform": "uppercase" } },
+      "caption": { "$value": { "fontFamily": "{primitive.font.family.brand}", "fontWeight": "{primitive.font.weight.regular}", "fontSize": "12px", "lineHeight": "1.5" } },
+      "editorial-body": { "$value": { "fontFamily": "{primitive.font.family.editorial}", "fontWeight": "{primitive.font.weight.regular}", "fontSize": "18px", "lineHeight": "1.7" }, "$description": "Corpo de texto do blog (Spectral)" }
+    }
+  },
+  "component": {
+    "$description": "Camada de componente — só o Button como exemplo do padrão; demais componentes ganham tokens conforme forem construídos (Fase 4)",
+    "button": {
+      "filled": {
+        "bg": { "$value": "{semantic.color.light.action.primary}", "$type": "color" },
+        "bg-hover": { "$value": "{semantic.color.light.action.primary-hover}", "$type": "color" },
+        "text": { "$value": "{semantic.color.light.text.on-action}", "$type": "color" },
+        "radius": { "$value": "{primitive.dimension.radius.md}", "$type": "dimension" }
+      },
+      "size": {
+        "md": { "height": { "$value": "40px", "$type": "dimension" }, "padding-x": { "$value": "{primitive.dimension.space.6}", "$type": "dimension" } },
+        "lg": { "height": { "$value": "48px", "$type": "dimension" }, "padding-x": { "$value": "{primitive.dimension.space.8}", "$type": "dimension" } },
+        "xl": { "height": { "$value": "56px", "$type": "dimension" }, "padding-x": { "$value": "{primitive.dimension.space.10}", "$type": "dimension" } }
+      }
+    }
+  },
+  "$open_items": [
+    "Sombras elevation-1/2/3: valores propostos, validar visualmente contra as seções ✅ da 2025",
+    "Type scale h4–h6: valores propostos por interpolação (produção pula de 32 para 18) — validar com o Jason",
+    "Pesos por heading (Thin em h1/h2 vem da produção): confirmar se a era healthcare mantém Thin em displays",
+    "Contraste WCAG: rodar validação automática em todos os pares texto/superfície antes do v1",
+    "Set oficial de client logos healthcare + curadoria dos ícones da Legacy",
+    "Mapear tokens responsivos (type scale por breakpoint) na cauda do CSS ainda não extraída"
+  ]
+}
