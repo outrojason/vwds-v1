@@ -1,0 +1,102 @@
+/*
+ * Typography styles — every value references a generated token variable.
+ * Source of truth: tokens/vwds.tokens.json (semantic.typography + semantic.color).
+ * These --vwds-* variables come from dist/css/variables.css.
+ */
+
+.root {
+  margin: 0;
+  /* color defaults come from the color-* classes below */
+}
+
+/* ---- Variants (style only; element is decided in the component) ---- */
+
+.variant-h1 {
+  font-family: var(--vwds-semantic-typography-h1-font-family);
+  font-size: var(--vwds-semantic-typography-h1-font-size);
+  font-weight: var(--vwds-semantic-typography-h1-font-weight);
+  line-height: var(--vwds-semantic-typography-h1-line-height);
+}
+.variant-h2 {
+  font-family: var(--vwds-semantic-typography-h2-font-family);
+  font-size: var(--vwds-semantic-typography-h2-font-size);
+  font-weight: var(--vwds-semantic-typography-h2-font-weight);
+  line-height: var(--vwds-semantic-typography-h2-line-height);
+}
+.variant-h3 {
+  font-family: var(--vwds-semantic-typography-h3-font-family);
+  font-size: var(--vwds-semantic-typography-h3-font-size);
+  font-weight: var(--vwds-semantic-typography-h3-font-weight);
+  line-height: var(--vwds-semantic-typography-h3-line-height);
+}
+.variant-h4 {
+  font-family: var(--vwds-semantic-typography-h4-font-family);
+  font-size: var(--vwds-semantic-typography-h4-font-size);
+  font-weight: var(--vwds-semantic-typography-h4-font-weight);
+  line-height: var(--vwds-semantic-typography-h4-line-height);
+}
+.variant-h5 {
+  font-family: var(--vwds-semantic-typography-h5-font-family);
+  font-size: var(--vwds-semantic-typography-h5-font-size);
+  font-weight: var(--vwds-semantic-typography-h5-font-weight);
+  line-height: var(--vwds-semantic-typography-h5-line-height);
+}
+.variant-h6 {
+  font-family: var(--vwds-semantic-typography-h6-font-family);
+  font-size: var(--vwds-semantic-typography-h6-font-size);
+  font-weight: var(--vwds-semantic-typography-h6-font-weight);
+  line-height: var(--vwds-semantic-typography-h6-line-height);
+}
+.variant-subtitle1 {
+  font-family: var(--vwds-semantic-typography-subtitle1-font-family);
+  font-size: var(--vwds-semantic-typography-subtitle1-font-size);
+  font-weight: var(--vwds-semantic-typography-subtitle1-font-weight);
+  line-height: var(--vwds-semantic-typography-subtitle1-line-height);
+}
+.variant-subtitle2 {
+  font-family: var(--vwds-semantic-typography-subtitle2-font-family);
+  font-size: var(--vwds-semantic-typography-subtitle2-font-size);
+  font-weight: var(--vwds-semantic-typography-subtitle2-font-weight);
+  line-height: var(--vwds-semantic-typography-subtitle2-line-height);
+}
+.variant-body1 {
+  font-family: var(--vwds-semantic-typography-body1-font-family);
+  font-size: var(--vwds-semantic-typography-body1-font-size);
+  font-weight: var(--vwds-semantic-typography-body1-font-weight);
+  line-height: var(--vwds-semantic-typography-body1-line-height);
+}
+.variant-body2 {
+  font-family: var(--vwds-semantic-typography-body2-font-family);
+  font-size: var(--vwds-semantic-typography-body2-font-size);
+  font-weight: var(--vwds-semantic-typography-body2-font-weight);
+  line-height: var(--vwds-semantic-typography-body2-line-height);
+}
+.variant-overline {
+  font-family: var(--vwds-semantic-typography-overline-font-family);
+  font-size: var(--vwds-semantic-typography-overline-font-size);
+  font-weight: var(--vwds-semantic-typography-overline-font-weight);
+  line-height: var(--vwds-semantic-typography-overline-line-height);
+  letter-spacing: var(--vwds-semantic-typography-overline-letter-spacing);
+  text-transform: var(--vwds-semantic-typography-overline-text-transform);
+}
+.variant-caption {
+  font-family: var(--vwds-semantic-typography-caption-font-family);
+  font-size: var(--vwds-semantic-typography-caption-font-size);
+  font-weight: var(--vwds-semantic-typography-caption-font-weight);
+  line-height: var(--vwds-semantic-typography-caption-line-height);
+}
+.variant-editorial-body {
+  font-family: var(--vwds-semantic-typography-editorial-body-font-family);
+  font-size: var(--vwds-semantic-typography-editorial-body-font-size);
+  font-weight: var(--vwds-semantic-typography-editorial-body-font-weight);
+  line-height: var(--vwds-semantic-typography-editorial-body-line-height);
+}
+
+/* ---- Colors (light theme roles) ---- */
+
+.color-primary   { color: var(--vwds-semantic-color-light-text-primary); }
+.color-secondary { color: var(--vwds-semantic-color-light-text-secondary); }
+.color-tertiary  { color: var(--vwds-semantic-color-light-text-tertiary); }
+.color-link      { color: var(--vwds-semantic-color-light-text-link); }
+.color-on-action { color: var(--vwds-semantic-color-light-text-on-action); }
+.color-inherit   { color: inherit; }
