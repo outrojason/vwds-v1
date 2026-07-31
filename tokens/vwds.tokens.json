@@ -333,8 +333,7 @@
             "$value": "{primitive.color.ice.50}"
           }
         }
-      },
-      "$description": "Light é o tema padrão do site. Dark NÃO é tema global — é camada pontual para aplicações específicas (texto sobre fundo escuro, blocos ocasionais). Verde/roxo do site vivem em imagens/ilustrações, não são tokens do sistema."
+      }
     },
     "typography": {
       "$type": "typography",
@@ -467,6 +466,18 @@
         "radius": {
           "$value": "{primitive.dimension.radius.md}",
           "$type": "dimension"
+        },
+        "bg-active": {
+          "$value": "{semantic.color.light.action.primary-active}",
+          "$type": "color"
+        },
+        "bg-disabled": {
+          "$value": "{primitive.color.steel.200}",
+          "$type": "color"
+        },
+        "text-disabled": {
+          "$value": "{primitive.color.steel.400}",
+          "$type": "color"
         }
       },
       "size": {
@@ -499,6 +510,53 @@
             "$value": "{primitive.dimension.space.10}",
             "$type": "dimension"
           }
+        }
+      },
+      "outline": {
+        "bg": {
+          "$value": "{semantic.color.light.surface.page}",
+          "$type": "color"
+        },
+        "bg-hover": {
+          "$value": "{primitive.color.steel.50}",
+          "$type": "color"
+        },
+        "border": {
+          "$value": "{semantic.color.light.action.primary}",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{semantic.color.light.action.primary}",
+          "$type": "color"
+        },
+        "text-disabled": {
+          "$value": "{primitive.color.steel.300}",
+          "$type": "color"
+        },
+        "border-disabled": {
+          "$value": "{primitive.color.steel.200}",
+          "$type": "color"
+        }
+      },
+      "text": {
+        "bg-hover": {
+          "$value": "{primitive.color.steel.50}",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{semantic.color.light.action.primary}",
+          "$type": "color"
+        },
+        "text-disabled": {
+          "$value": "{primitive.color.steel.300}",
+          "$type": "color"
+        }
+      },
+      "focus": {
+        "ring": {
+          "$value": "{primitive.color.blue.400}",
+          "$type": "color",
+          "$description": "Anel de foco visível (WCAG 2.4.7). 2px solid + offset 2px"
         }
       }
     }

@@ -1,0 +1,98 @@
+/*
+ * Button styles — cada valor referencia component.button.* (tokens).
+ * Fonte: dist/css/variables.css (gerado do tokens.json).
+ */
+
+.root {
+  /* reset + base */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vwds-primitive-dimension-space-2);
+  border: 2px solid transparent; /* mantém o mesmo box em todas as variantes */
+  border-radius: var(--vwds-component-button-filled-radius);
+  font-family: var(--vwds-semantic-typography-subtitle2-font-family);
+  font-weight: var(--vwds-semantic-typography-subtitle2-font-weight);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.root:disabled {
+  cursor: not-allowed;
+}
+
+/* Foco visível — WCAG 2.4.7. Aplica-se a todas as variantes. */
+.root:focus-visible {
+  outline: 2px solid var(--vwds-component-button-focus-ring);
+  outline-offset: 2px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ---- Sizes (height + padding-x, font-size por tamanho) ---- */
+
+.size-md {
+  height: var(--vwds-component-button-size-md-height);
+  padding-inline: var(--vwds-component-button-size-md-padding-x);
+  font-size: var(--vwds-semantic-typography-body2-font-size);
+}
+.size-lg {
+  height: var(--vwds-component-button-size-lg-height);
+  padding-inline: var(--vwds-component-button-size-lg-padding-x);
+  font-size: var(--vwds-semantic-typography-body1-font-size);
+}
+.size-xl {
+  height: var(--vwds-component-button-size-xl-height);
+  padding-inline: var(--vwds-component-button-size-xl-padding-x);
+  font-size: var(--vwds-semantic-typography-subtitle1-font-size);
+}
+
+/* ---- Variant: filled ---- */
+.variant-filled {
+  background-color: var(--vwds-component-button-filled-bg);
+  color: var(--vwds-component-button-filled-text);
+}
+.variant-filled:hover:not(:disabled) {
+  background-color: var(--vwds-component-button-filled-bg-hover);
+}
+.variant-filled:active:not(:disabled) {
+  background-color: var(--vwds-component-button-filled-bg-active);
+}
+.variant-filled:disabled {
+  background-color: var(--vwds-component-button-filled-bg-disabled);
+  color: var(--vwds-component-button-filled-text-disabled);
+}
+
+/* ---- Variant: outline ---- */
+.variant-outline {
+  background-color: var(--vwds-component-button-outline-bg);
+  border-color: var(--vwds-component-button-outline-border);
+  color: var(--vwds-component-button-outline-text);
+}
+.variant-outline:hover:not(:disabled) {
+  background-color: var(--vwds-component-button-outline-bg-hover);
+}
+.variant-outline:disabled {
+  border-color: var(--vwds-component-button-outline-border-disabled);
+  color: var(--vwds-component-button-outline-text-disabled);
+}
+
+/* ---- Variant: text ---- */
+.variant-text {
+  background-color: transparent;
+  color: var(--vwds-component-button-text-text);
+}
+.variant-text:hover:not(:disabled) {
+  background-color: var(--vwds-component-button-text-bg-hover);
+}
+.variant-text:disabled {
+  color: var(--vwds-component-button-text-text-disabled);
+}
