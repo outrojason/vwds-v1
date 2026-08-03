@@ -98,11 +98,11 @@
         "$type": "fontFamily",
         "brand": {
           "$value": [
-            "Moderat",
-            "Arial",
+            "DM Sans",
+            "system-ui",
             "sans-serif"
           ],
-          "$description": "Pesos licenciados em produção: 100, 300, 400, 700. NUNCA usar famílias fantasma ('Moderat Bold' etc.)"
+          "$description": "DM Sans — fonte de marca alternativa da Vinta, open-source, substitui Moderat. Pesos: 100, 300, 400, 700. NUNCA usar famílias fantasma ('DM Sans Bold' etc.)"
         },
         "editorial": {
           "$value": [

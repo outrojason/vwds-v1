@@ -1,7 +1,5 @@
 import type { Preview } from '@storybook/react';
-// Load the generated tokens + font faces so stories render with real values.
-import '../dist/css/variables.css';
-import '../src/styles/fonts.css';
+import './preview.css';
 
 const preview: Preview = {
   parameters: {

@@ -16,12 +16,16 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@storybook/addon-a11y": "^8.6.18",
+    "@storybook/addon-essentials": "^8.6.18",
     "@storybook/react": "^8.6.18",
+    "@storybook/react-vite": "^8.6.18",
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react": "^6.0.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "storybook": "^8.6.18",
     "style-dictionary": "^5.5.0",
     "typescript": "^5.4.5",
     "vite": "^8.2.0"
@@ -30,5 +34,8 @@
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true
   }
 }
