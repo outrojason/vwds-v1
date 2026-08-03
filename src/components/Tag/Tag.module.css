@@ -1,0 +1,85 @@
+/*
+ * Tag styles — cada valor referencia component.tag.* (tokens).
+ * Fonte: dist/css/variables.css (gerado do tokens.json).
+ */
+
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--vwds-primitive-dimension-space-1);
+  border: none;
+  font-family: var(--vwds-semantic-typography-body2-font-family);
+  font-weight: var(--vwds-semantic-typography-body2-font-weight);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.clickable {
+  cursor: pointer;
+}
+.clickable:focus-visible {
+  outline: 2px solid var(--vwds-component-tag-focus-ring);
+  outline-offset: 2px;
+}
+
+/* ---- Sizes (padding + font-size) ---- */
+
+.size-sm {
+  padding: var(--vwds-primitive-dimension-space-1) var(--vwds-primitive-dimension-space-2);
+  font-size: var(--vwds-semantic-typography-caption-font-size);
+}
+.size-md {
+  padding: var(--vwds-primitive-dimension-space-2) var(--vwds-primitive-dimension-space-3);
+  font-size: var(--vwds-semantic-typography-body2-font-size);
+}
+
+/* ---- Variant: category ---- */
+.variant-category {
+  border-radius: var(--vwds-component-tag-category-radius);
+  background-color: var(--vwds-component-tag-category-bg);
+  color: var(--vwds-component-tag-category-text);
+}
+.variant-category.clickable:hover:not(.selected) {
+  background-color: var(--vwds-component-tag-category-bg-hover);
+}
+.variant-category.clickable:active {
+  background-color: var(--vwds-component-tag-category-bg-pressed);
+}
+.variant-category.selected {
+  background-color: var(--vwds-component-tag-category-bg-selected);
+  color: var(--vwds-component-tag-category-text-selected);
+}
+
+/* ---- Variant: label ---- */
+.variant-label {
+  border-radius: var(--vwds-component-tag-label-radius);
+  background-color: var(--vwds-component-tag-label-bg);
+  color: var(--vwds-component-tag-label-text);
+  box-shadow: var(--vwds-primitive-shadow-elevation-1-offset-x)
+    var(--vwds-primitive-shadow-elevation-1-offset-y)
+    var(--vwds-primitive-shadow-elevation-1-blur)
+    var(--vwds-primitive-shadow-elevation-1-spread)
+    var(--vwds-primitive-shadow-elevation-1-color);
+}
+.iconBox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--vwds-component-tag-label-icon-bg);
+  color: var(--vwds-component-tag-label-icon-fg);
+  border-radius: var(--vwds-primitive-dimension-radius-sm);
+  padding: var(--vwds-primitive-dimension-space-1);
+}
+
+/* ---- Variant: meta ---- */
+.variant-meta {
+  border-radius: var(--vwds-component-tag-meta-radius);
+  background-color: var(--vwds-component-tag-meta-bg);
+  color: var(--vwds-component-tag-meta-text);
+}
+.iconMeta {
+  display: inline-flex;
+  align-items: center;
+  color: var(--vwds-component-tag-meta-icon-fg);
+}
