@@ -459,6 +459,16 @@
   },
   "component": {
     "$description": "Camada de componente — só o Button como exemplo do padrão; demais componentes ganham tokens conforme forem construídos (Fase 4)",
+    "card": {
+      "$description": "Card base — contêiner compartilhado. Fundo branco, raio suave, sombra elevation-1 em repouso. Delight (só clicável): hover eleva para elevation-2, borda azul, translateY -2px.",
+      "bg": {"$value": "{semantic.color.light.surface.page}", "$type": "color"},
+      "radius": {"$value": "{primitive.dimension.radius.lg}", "$type": "dimension"},
+      "padding": {"$value": "{primitive.dimension.space.6}", "$type": "dimension"},
+      "border-default": {"$value": "transparent", "$type": "color"},
+      "border-hover": {"$value": "{semantic.color.light.action.primary}", "$type": "color"},
+      "gap": {"$value": "{primitive.dimension.space.3}", "$type": "dimension"},
+      "max-width": {"$value": "500px", "$type": "dimension"}
+    },
     "tag": {
       "$description": "Tag/Badge — 3 variantes por uso. category: clicável, estados default/selected/pressed. label: rótulo com ícone, não-clicável. meta: metadado com ícone+separador, não-clicável.",
       "category": {

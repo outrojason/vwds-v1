@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta as StorybookMeta, StoryObj } from '@storybook/react';
 import { Tag } from './Tag';
 
-const meta: Meta<typeof Tag> = {
+const meta: StorybookMeta<typeof Tag> = {
   title: 'Atoms/Tag',
   component: Tag,
   parameters: {

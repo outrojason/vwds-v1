@@ -1,0 +1,63 @@
+/*
+ * Card styles — cada valor referencia component.card.* (tokens).
+ * Fonte: dist/css/variables.css (gerado do tokens.json).
+ */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vwds-component-card-gap);
+  max-width: var(--vwds-component-card-max-width);
+  background-color: var(--vwds-component-card-bg);
+  border-radius: var(--vwds-component-card-radius);
+  /* Borda sempre presente (mesmo transparente) — evita reflow no hover. */
+  border: 1.5px solid var(--vwds-component-card-border-default);
+  padding: var(--vwds-component-card-padding);
+  box-shadow: var(--vwds-primitive-shadow-elevation-1-offset-x)
+    var(--vwds-primitive-shadow-elevation-1-offset-y)
+    var(--vwds-primitive-shadow-elevation-1-blur)
+    var(--vwds-primitive-shadow-elevation-1-spread)
+    var(--vwds-primitive-shadow-elevation-1-color);
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Imagem sangra até as bordas do card — o overflow:hidden + border-radius
+   do .root clipam a imagem aos cantos superiores automaticamente. */
+.edgeToEdge {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ---- Estado clicável: hover-delight ---- */
+.clickable {
+  cursor: pointer;
+  transition: box-shadow 200ms ease, border-color 200ms ease, transform 200ms ease;
+}
+
+.clickable:hover,
+.clickable:focus-visible {
+  border-color: var(--vwds-component-card-border-hover);
+  box-shadow: var(--vwds-primitive-shadow-elevation-2-offset-x)
+    var(--vwds-primitive-shadow-elevation-2-offset-y)
+    var(--vwds-primitive-shadow-elevation-2-blur)
+    var(--vwds-primitive-shadow-elevation-2-spread)
+    var(--vwds-primitive-shadow-elevation-2-color);
+  transform: translateY(-2px);
+}
+
+/* Foco visível — WCAG 2.4.7, coerente com o delight de hover. */
+.clickable:focus-visible {
+  outline: 2px solid var(--vwds-component-card-border-hover);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clickable {
+    transition: none;
+  }
+  .clickable:hover,
+  .clickable:focus-visible {
+    transform: none;
+  }
+}
