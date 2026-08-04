@@ -1,0 +1,88 @@
+/*
+ * Input styles — cada valor referencia component.input.* (tokens).
+ * Fonte: dist/css/variables.css (gerado do tokens.json).
+ */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vwds-primitive-dimension-space-2);
+  width: 100%;
+}
+
+.label {
+  font-family: var(--vwds-semantic-typography-body2-font-family);
+  font-weight: var(--vwds-semantic-typography-body2-font-weight);
+  font-size: var(--vwds-semantic-typography-body2-font-size);
+  line-height: var(--vwds-semantic-typography-body2-line-height);
+  color: var(--vwds-component-input-label);
+}
+
+.requiredMark {
+  color: var(--vwds-component-input-required-mark);
+}
+
+/* ---- Campo (input ou textarea) ---- */
+.field {
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--vwds-component-input-height);
+  padding: var(--vwds-component-input-padding-y) var(--vwds-component-input-padding-x);
+  border-radius: var(--vwds-component-input-radius);
+  border: 1px solid var(--vwds-component-input-border);
+  background-color: var(--vwds-component-input-bg);
+  color: var(--vwds-component-input-text);
+  font-family: var(--vwds-semantic-typography-body1-font-family);
+  font-weight: var(--vwds-semantic-typography-body1-font-weight);
+  font-size: var(--vwds-semantic-typography-body1-font-size);
+  line-height: var(--vwds-semantic-typography-body1-line-height);
+  outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.field::placeholder {
+  color: var(--vwds-component-input-placeholder);
+}
+
+.field:focus-visible {
+  border-color: var(--vwds-component-input-border-focus);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--vwds-component-input-focus-ring) 30%, transparent);
+}
+
+.field:disabled {
+  background-color: var(--vwds-component-input-bg-disabled);
+  cursor: not-allowed;
+}
+
+.field.error {
+  border-color: var(--vwds-component-input-border-error);
+}
+
+.field.error:focus-visible {
+  border-color: var(--vwds-component-input-border-error);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--vwds-component-input-border-error) 30%, transparent);
+}
+
+/* Textarea — altura mínima maior, redimensionável verticalmente. */
+.multiline {
+  height: auto;
+  min-height: 96px;
+  resize: vertical;
+}
+
+/* ---- Helper / mensagem de erro ---- */
+.helper {
+  font-family: var(--vwds-semantic-typography-caption-font-family);
+  font-weight: var(--vwds-semantic-typography-caption-font-weight);
+  font-size: var(--vwds-semantic-typography-caption-font-size);
+  line-height: var(--vwds-semantic-typography-caption-line-height);
+  color: var(--vwds-component-input-helper);
+}
+
+.helperError {
+  font-family: var(--vwds-semantic-typography-caption-font-family);
+  font-weight: var(--vwds-semantic-typography-caption-font-weight);
+  font-size: var(--vwds-semantic-typography-caption-font-size);
+  line-height: var(--vwds-semantic-typography-caption-line-height);
+  color: var(--vwds-component-input-helper-error);
+}

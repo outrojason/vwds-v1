@@ -6,3 +6,7 @@ export { Tag } from './components/Tag';
 export type { TagProps, TagVariant, TagSize } from './components/Tag';
 export { Card } from './components/Card';
 export type { CardProps } from './components/Card';
+export { Input } from './components/Input';
+export type { InputProps } from './components/Input';
+export { Icon, ArrowRightIcon, CheckIcon } from './components/Icon';
+export type { IconProps, IconSize, IconColor, ArrowRightIconProps, CheckIconProps } from './components/Icon';

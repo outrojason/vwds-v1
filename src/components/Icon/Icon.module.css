@@ -1,0 +1,39 @@
+/*
+ * Icon styles — cada valor referencia component.icon.* (tokens).
+ * Fonte: dist/css/variables.css (gerado do tokens.json).
+ */
+
+.root {
+  display: inline-block;
+  flex-shrink: 0;
+  stroke-width: var(--vwds-component-icon-stroke-width);
+}
+
+/* ---- Sizes ---- */
+.size-sm {
+  width: var(--vwds-component-icon-size-sm);
+  height: var(--vwds-component-icon-size-sm);
+}
+.size-md {
+  width: var(--vwds-component-icon-size-md);
+  height: var(--vwds-component-icon-size-md);
+}
+.size-lg {
+  width: var(--vwds-component-icon-size-lg);
+  height: var(--vwds-component-icon-size-lg);
+}
+.size-xl {
+  width: var(--vwds-component-icon-size-xl);
+  height: var(--vwds-component-icon-size-xl);
+}
+
+/* ---- Colors ---- */
+.color-default {
+  color: var(--vwds-component-icon-color-default);
+}
+.color-muted {
+  color: var(--vwds-component-icon-color-muted);
+}
+.color-inherit {
+  color: inherit;
+}

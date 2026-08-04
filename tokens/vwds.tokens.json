@@ -95,6 +95,12 @@
       },
       "white": {
         "$value": "#FFFFFF"
+      },
+      "red": {
+        "$type": "color",
+        "500": {"$value": "#D92D20", "$description": "vermelho de erro"},
+        "600": {"$value": "#B42318", "$description": "vermelho escuro (texto de erro)"},
+        "50":  {"$value": "#FEF3F2", "$description": "fundo sutil de erro"}
       }
     },
     "font": {
@@ -290,6 +296,11 @@
           "strong": {
             "$value": "{primitive.color.navy.900}"
           }
+        },
+        "feedback": {
+          "error": {"$value": "{primitive.color.red.500}"},
+          "error-text": {"$value": "{primitive.color.red.600}"},
+          "error-surface": {"$value": "{primitive.color.red.50}"}
         }
       },
       "dark": {
@@ -342,6 +353,11 @@
           "strong": {
             "$value": "{primitive.color.ice.50}"
           }
+        },
+        "feedback": {
+          "error": {"$value": "{primitive.color.red.500}"},
+          "error-text": {"$value": "{primitive.color.red.600}"},
+          "error-surface": {"$value": "{primitive.color.red.50}"}
         }
       }
     },
@@ -459,6 +475,37 @@
   },
   "component": {
     "$description": "Camada de componente — só o Button como exemplo do padrão; demais componentes ganham tokens conforme forem construídos (Fase 4)",
+    "icon": {
+      "$description": "PROPOSTO — pendente de validação visual. Infraestrutura do sistema de ícones (Icon.tsx): grid 24x24, stroke outline. Os ícones específicos (paths) vêm de design.",
+      "grid": {"$value": "24px", "$type": "dimension", "$description": "grid base do desenho — usado no viewBox (0 0 24 24)"},
+      "stroke-width": {"$value": "1.5px", "$type": "dimension"},
+      "corner-radius": {"$value": "{primitive.dimension.radius.sm}", "$type": "dimension", "$description": "reservado para contextos futuros de ícone-com-fundo; não é usado pelo Icon.tsx hoje (o arredondamento visual do traço vem de strokeLinecap/strokeLinejoin=round)"},
+      "size-sm": {"$value": "16px", "$type": "dimension"},
+      "size-md": {"$value": "20px", "$type": "dimension"},
+      "size-lg": {"$value": "24px", "$type": "dimension"},
+      "size-xl": {"$value": "32px", "$type": "dimension"},
+      "color-default": {"$value": "{semantic.color.light.text.primary}", "$type": "color"},
+      "color-muted": {"$value": "{semantic.color.light.text.tertiary}", "$type": "color"}
+    },
+    "input": {
+      "$description": "Input/Form field v1: texto + textarea, label fixo, help text, estados default/focus/error/disabled.",
+      "radius": {"$value": "{primitive.dimension.radius.md}", "$type": "dimension"},
+      "height": {"$value": "40px", "$type": "dimension"},
+      "padding-x": {"$value": "{primitive.dimension.space.4}", "$type": "dimension"},
+      "padding-y": {"$value": "{primitive.dimension.space.2}", "$type": "dimension"},
+      "bg": {"$value": "{semantic.color.light.surface.page}", "$type": "color"},
+      "bg-disabled": {"$value": "{semantic.color.light.surface.subtle}", "$type": "color"},
+      "border": {"$value": "{semantic.color.light.border.default}", "$type": "color"},
+      "border-focus": {"$value": "{semantic.color.light.action.primary}", "$type": "color"},
+      "border-error": {"$value": "{semantic.color.light.feedback.error}", "$type": "color"},
+      "text": {"$value": "{semantic.color.light.text.primary}", "$type": "color"},
+      "placeholder": {"$value": "{semantic.color.light.text.tertiary}", "$type": "color"},
+      "label": {"$value": "{semantic.color.light.text.primary}", "$type": "color"},
+      "helper": {"$value": "{semantic.color.light.text.tertiary}", "$type": "color"},
+      "helper-error": {"$value": "{semantic.color.light.feedback.error-text}", "$type": "color"},
+      "focus-ring": {"$value": "{primitive.color.blue.400}", "$type": "color"},
+      "required-mark": {"$value": "{semantic.color.light.feedback.error}", "$type": "color"}
+    },
     "card": {
       "$description": "Card base — contêiner compartilhado. Fundo branco, raio suave, sombra elevation-1 em repouso. Delight (só clicável): hover eleva para elevation-2, borda azul, translateY -2px.",
       "bg": {"$value": "{semantic.color.light.surface.page}", "$type": "color"},
