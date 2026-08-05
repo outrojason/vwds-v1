@@ -6,6 +6,8 @@ export { Tag } from './components/Tag';
 export type { TagProps, TagVariant, TagSize } from './components/Tag';
 export { Card } from './components/Card';
 export type { CardProps } from './components/Card';
+export { ServiceCard } from './components/ServiceCard';
+export type { ServiceCardProps, ServiceCardCta, ServiceCardCtaVariant } from './components/ServiceCard';
 export { Input } from './components/Input';
 export type { InputProps } from './components/Input';
 export { Icon, ArrowRightIcon, CheckIcon } from './components/Icon';

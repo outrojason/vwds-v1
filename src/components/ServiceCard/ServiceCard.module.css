@@ -1,0 +1,29 @@
+/*
+ * ServiceCard styles — layout do header e alinhamento do conteúdo; o
+ * espaçamento vertical entre header/descrição/CTA vem do gap do Card
+ * (flex column no .root do Card). Sem tokens service-card.* próprios:
+ * reaproveita component.card.gap (header gap) e a escala de espaço
+ * (space-12 = 48px) para o ícone.
+ */
+
+/* Sobrescreve o align-items:stretch (default) do flex column do Card —
+   sem isso, o Button do CTA herda a largura total do card. */
+.card {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--vwds-component-card-gap);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--vwds-primitive-dimension-space-12);
+  height: var(--vwds-primitive-dimension-space-12);
+  flex-shrink: 0;
+}

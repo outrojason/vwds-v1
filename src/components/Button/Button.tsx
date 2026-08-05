@@ -12,8 +12,7 @@ import styles from './Button.module.css';
 export type ButtonVariant = 'filled' | 'outline' | 'text';
 export type ButtonSize = 'md' | 'lg' | 'xl';
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonOwnProps {
   variant?: ButtonVariant;
   size?: ButtonSize;
   /** Ocupa 100% da largura do container. */
@@ -22,21 +21,27 @@ export interface ButtonProps
   iconLeft?: React.ReactNode;
   /** Ícone à direita do texto (opcional). */
   iconRight?: React.ReactNode;
+  className?: string;
   children: React.ReactNode;
 }
 
-export const Button = ({
-  variant = 'filled',
-  size = 'md',
-  fullWidth = false,
-  iconLeft,
-  iconRight,
-  type = 'button',
-  className,
-  children,
-  disabled,
-  ...rest
-}: ButtonProps) => {
+export type ButtonProps =
+  | (ButtonOwnProps & React.ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined })
+  | (ButtonOwnProps & React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string });
+
+export const Button = (props: ButtonProps) => {
+  const {
+    variant = 'filled',
+    size = 'md',
+    fullWidth = false,
+    iconLeft,
+    iconRight,
+    className,
+    children,
+    href,
+    ...rest
+  } = props;
+
   const classes = [
     styles.root,
     styles[`variant-${variant}`],
@@ -47,12 +52,30 @@ export const Button = ({
     .filter(Boolean)
     .join(' ');
 
-  return (
-    // type defaults to "button" so a button inside a form doesn't submit by accident
-    <button className={classes} type={type} disabled={disabled} {...rest}>
+  const content = (
+    <>
       {iconLeft ? <span className={styles.icon} aria-hidden="true">{iconLeft}</span> : null}
       {children}
       {iconRight ? <span className={styles.icon} aria-hidden="true">{iconRight}</span> : null}
+    </>
+  );
+
+  // href presente → renderiza <a> (mesma aparência do button) em vez de <button>,
+  // para CTAs que navegam (ex.: ServiceCard) sem aninhar elementos interativos.
+  if (href) {
+    return (
+      <a className={classes} href={href} {...(rest as React.AnchorHTMLAttributes<HTMLAnchorElement>)}>
+        {content}
+      </a>
+    );
+  }
+
+  const { type = 'button', disabled, ...buttonRest } = rest as React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+  return (
+    // type defaults to "button" so a button inside a form doesn't submit by accident
+    <button className={classes} type={type} disabled={disabled} {...buttonRest}>
+      {content}
     </button>
   );
 };
