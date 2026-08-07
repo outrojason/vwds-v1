@@ -1,0 +1,147 @@
+/*
+ * Footer styles — grid auto-fit pra reflow sem overlap em telas
+ * menores. Título de grupo usa Typography variant="caption" (12px,
+ * regular, tertiary) + peso bold sobrescrito via primitive.font.weight
+ * (mesmo token que a própria Typography usa pras variantes bold) — sem
+ * uppercase, sem literal de cor/peso.
+ */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vwds-primitive-dimension-space-8);
+  padding: var(--vwds-primitive-dimension-space-8);
+  background-color: var(--vwds-semantic-color-light-surface-subtle);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--vwds-primitive-dimension-space-8);
+}
+
+.brandColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vwds-primitive-dimension-space-4);
+  /* sem isso, o e-mail (string sem espaço) força a coluna a ficar mais
+     larga que o minmax(160px,...) e o grid não colapsa em telas estreitas. */
+  min-width: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: var(--vwds-component-icon-size-xl);
+}
+.logo > * {
+  display: block;
+  height: 100%;
+  width: auto;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vwds-primitive-dimension-space-2);
+}
+
+.contactLink {
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.address {
+  display: flex;
+  align-items: center;
+  gap: var(--vwds-primitive-dimension-space-2);
+}
+
+.addressFlag {
+  display: flex;
+  flex-shrink: 0;
+  width: var(--vwds-component-icon-size-lg);
+  height: var(--vwds-component-icon-size-lg);
+  border-radius: var(--vwds-primitive-dimension-radius-full);
+  overflow: hidden;
+}
+.addressFlag > * {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vwds-primitive-dimension-space-6);
+  min-width: 0;
+  /* colunas de link são alinhadas à direita no design validado — só a
+     brandColumn (logo/contato) fica à esquerda. */
+  text-align: right;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vwds-primitive-dimension-space-3);
+}
+
+.groupTitle {
+  font-weight: var(--vwds-primitive-font-weight-bold);
+}
+
+.groupLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vwds-primitive-dimension-space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.groupLink {
+  text-decoration: none;
+}
+.groupLink:hover > * {
+  color: var(--vwds-semantic-color-light-text-primary);
+}
+
+.badgesRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--vwds-primitive-dimension-space-4);
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+}
+
+.base {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--vwds-primitive-dimension-space-4);
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: var(--vwds-primitive-dimension-space-3);
+  flex-wrap: wrap;
+}
+
+.socialIcon {
+  display: flex;
+  width: var(--vwds-component-icon-size-lg);
+  height: var(--vwds-component-icon-size-lg);
+  color: var(--vwds-semantic-color-light-text-tertiary);
+}
+.socialIcon:hover {
+  color: var(--vwds-semantic-color-light-action-primary);
+}

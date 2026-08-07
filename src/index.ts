@@ -20,3 +20,15 @@ export { Input } from './components/Input';
 export type { InputProps } from './components/Input';
 export { Icon, ArrowRightIcon, CheckIcon } from './components/Icon';
 export type { IconProps, IconSize, IconColor, ArrowRightIconProps, CheckIconProps } from './components/Icon';
+export { Header } from './components/Header';
+export type { HeaderProps, HeaderNavItem } from './components/Header';
+export { Footer } from './components/Footer';
+export type {
+  FooterProps,
+  FooterAddress,
+  FooterContact,
+  FooterLinkItem,
+  FooterLinkGroup,
+  FooterColumn,
+  FooterSocialItem,
+} from './components/Footer';

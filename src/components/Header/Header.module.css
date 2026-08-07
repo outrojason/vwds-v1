@@ -1,0 +1,81 @@
+/*
+ * Header styles. Grid [200px][1fr][200px] e o efeito de vidro do
+ * nav-pill (rgba branco + blur) são valores exatos pedidos na spec —
+ * sem token equivalente no design system ainda. Onde um token bate
+ * exato (radius 16px, padding 8px) usamos var(); o blur reaproveita o
+ * step space-4 (16px) da escala em vez de introduzir outro número.
+ * Zero literais de cor: a transparência do pill vem de color-mix()
+ * sobre primitive.color.white, não de rgba() hardcoded.
+ */
+
+.root {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  align-items: center;
+  gap: var(--vwds-primitive-dimension-space-4);
+  padding: var(--vwds-primitive-dimension-space-4) var(--vwds-primitive-dimension-space-8);
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  /* acima do conteúdo da página, sem token — decisão estrutural local. */
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: var(--vwds-component-icon-size-xl);
+}
+.logo > * {
+  display: block;
+  height: 100%;
+  width: auto;
+}
+
+.navPill {
+  grid-column: 2;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: var(--vwds-primitive-dimension-space-1);
+  background-color: color-mix(in srgb, var(--vwds-primitive-color-white) 60%, transparent);
+  backdrop-filter: blur(var(--vwds-primitive-dimension-space-4));
+  border-radius: var(--vwds-primitive-dimension-radius-lg);
+  padding: var(--vwds-primitive-dimension-space-2);
+}
+
+.navItem,
+.navItemActive {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--vwds-primitive-dimension-space-2) var(--vwds-primitive-dimension-space-4);
+  /* 10px — não há passo na escala de radius (sm4/md8/lg16) que bata exato. */
+  border-radius: 10px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+.navItem:focus-visible,
+.navItemActive:focus-visible {
+  outline: 2px solid var(--vwds-component-button-focus-ring);
+  outline-offset: 2px;
+}
+
+.navItem {
+  color: var(--vwds-semantic-color-light-text-primary);
+  background-color: transparent;
+}
+.navItem:hover {
+  background-color: color-mix(in srgb, var(--vwds-semantic-color-light-action-primary) 10%, transparent);
+}
+
+.navItemActive {
+  color: var(--vwds-semantic-color-light-text-on-action);
+  background-color: var(--vwds-semantic-color-light-action-primary);
+}
+
+.cta {
+  margin-left: var(--vwds-primitive-dimension-space-2);
+}
