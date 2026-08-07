@@ -90,6 +90,12 @@
   font-weight: var(--vwds-semantic-typography-editorial-body-font-weight);
   line-height: var(--vwds-semantic-typography-editorial-body-line-height);
 }
+.variant-card-title {
+  font-family: var(--vwds-semantic-typography-card-title-font-family);
+  font-size: var(--vwds-semantic-typography-card-title-font-size);
+  font-weight: var(--vwds-semantic-typography-card-title-font-weight);
+  line-height: var(--vwds-semantic-typography-card-title-line-height);
+}
 
 /* ---- Colors ---- */
 

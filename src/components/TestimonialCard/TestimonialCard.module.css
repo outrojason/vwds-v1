@@ -1,0 +1,118 @@
+/*
+ * TestimonialCard styles — Card.root já é flex column com gap/stretch
+ * (component.card.*); como nenhum filho direto aqui é uma caixa visível
+ * que precisa de hug-width (são linhas que ocupam a largura toda), não
+ * precisamos sobrescrever align-items. Zero literais de cor — tudo
+ * referencia semantic.color.*.
+ */
+
+/* Sobrescreve o gap do Card (component.card.gap, 12px) — os 4 blocos
+   (topo/citação/estrelas/rodapé) respiram mais que o gap interno de
+   cada linha (que continua em space-3, 12px). */
+.card {
+  gap: var(--vwds-primitive-dimension-space-8);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--vwds-primitive-dimension-space-3);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: var(--vwds-component-icon-size-xl);
+}
+.logo > * {
+  display: block;
+  height: 100%;
+  width: auto;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: var(--vwds-primitive-dimension-space-2);
+}
+
+.flag {
+  display: flex;
+  flex-shrink: 0;
+  width: var(--vwds-component-icon-size-lg);
+  height: var(--vwds-component-icon-size-lg);
+  border-radius: var(--vwds-primitive-dimension-radius-full);
+  overflow: hidden;
+}
+.flag > * {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quote {
+  /* subtitle1 (18px) já cobre o tamanho pedido; line-height do token é
+     1.5 — aqui respira um pouco mais (~1.6), sem token dedicado pra isso. */
+  line-height: 1.6;
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: var(--vwds-primitive-dimension-space-3);
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: var(--vwds-primitive-dimension-space-1);
+  font-size: var(--vwds-semantic-typography-h6-font-size);
+  line-height: 1;
+}
+.starFilled {
+  color: var(--vwds-semantic-color-light-action-primary);
+}
+.starEmpty {
+  color: var(--vwds-semantic-color-light-text-tertiary);
+}
+
+.divider {
+  flex: 1 1 auto;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--vwds-semantic-color-light-action-primary) 40%, transparent),
+    transparent
+  );
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: var(--vwds-primitive-dimension-space-3);
+}
+
+.photo {
+  display: flex;
+  flex-shrink: 0;
+  /* 56px — não há passo na escala de espaço (48 → 64) que bata exato
+     com o "círculo 56px" pedido. */
+  width: 56px;
+  height: 56px;
+  border-radius: var(--vwds-primitive-dimension-radius-full);
+  overflow: hidden;
+}
+.photo > * {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vwds-primitive-dimension-space-1);
+}

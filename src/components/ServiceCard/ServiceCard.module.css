@@ -15,7 +15,7 @@
 
 .header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--vwds-component-card-gap);
 }
 

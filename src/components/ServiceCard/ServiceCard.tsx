@@ -44,7 +44,7 @@ export const ServiceCard = ({
     <Card className={cardClassName}>
       <div className={styles.header}>
         {icon ? <span className={styles.icon}>{icon}</span> : null}
-        <Typography variant="h3">{title}</Typography>
+        <Typography variant="card-title">{title}</Typography>
       </div>
       <Typography variant="body2" color="secondary">
         {description}

@@ -396,6 +396,15 @@
           "lineHeight": "1.3"
         }
       },
+      "card-title": {
+        "$value": {
+          "fontFamily": "{primitive.font.family.brand}",
+          "fontWeight": "{primitive.font.weight.regular}",
+          "fontSize": "24px",
+          "lineHeight": "1.3"
+        },
+        "$description": "Papel semântico de título de card — mesmo tamanho do h4, renderiza como <h3> (hierarquia) mas visualmente menor, pra caber no card."
+      },
       "h5": {
         "$value": {
           "fontFamily": "{primitive.font.family.brand}",
@@ -515,6 +524,13 @@
       "border-hover": {"$value": "{semantic.color.light.action.primary}", "$type": "color"},
       "gap": {"$value": "{primitive.dimension.space.3}", "$type": "dimension"},
       "max-width": {"$value": "500px", "$type": "dimension"}
+    },
+    "blog-card": {
+      "$description": "BlogCard: default/featured/drops. Card inteiro clicável. Título+descrição truncam 3 linhas.",
+      "drops-bg": {"$value": "{primitive.color.blue.400}", "$type": "color"},
+      "drops-bg-hover": {"$value": "{primitive.color.blue.500}", "$type": "color"},
+      "drops-text": {"$value": "{primitive.color.ice.50}", "$type": "color"},
+      "drops-meta": {"$value": "{primitive.color.darkmode.text-muted}", "$type": "color"}
     },
     "tag": {
       "$description": "Tag/Badge — 3 variantes por uso. category: clicável, estados default/selected/pressed. label: rótulo com ícone, não-clicável. meta: metadado com ícone+separador, não-clicável.",

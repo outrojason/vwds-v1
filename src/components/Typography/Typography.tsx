@@ -24,7 +24,8 @@ export type TypographyVariant =
   | 'body2'
   | 'overline'
   | 'caption'
-  | 'editorial-body';
+  | 'editorial-body'
+  | 'card-title';
 
 export type TypographyColor =
   | 'primary'
@@ -48,6 +49,7 @@ const DEFAULT_ELEMENT: Record<TypographyVariant, keyof JSX.IntrinsicElements> = 
   overline: 'span',
   caption: 'span',
   'editorial-body': 'p',
+  'card-title': 'h3',
 };
 
 export interface TypographyProps extends React.HTMLAttributes<HTMLElement> {

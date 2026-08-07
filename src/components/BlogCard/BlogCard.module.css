@@ -1,0 +1,87 @@
+/*
+ * BlogCard styles — 3 layouts sobre o Card base. Card.root é sempre
+ * flex column com align-items:stretch (default); aqui sobrescrevemos
+ * para flex-start (hug) exceto no featured, que vira uma linha
+ * horizontal com stretch (pra imagem ocupar a altura toda). Cores do
+ * drops vêm de component.blog-card.drops-*; o resto reaproveita
+ * component.card.* e component.tag.*.
+ */
+
+.card {
+  align-items: flex-start;
+}
+
+/* ---- Truncate (default + featured): título e descrição em exatamente
+   3 linhas, independente da viewport. ---- */
+.clamp3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+/* ---- Layout: default (vertical) ---- */
+.image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--vwds-primitive-dimension-radius-md);
+}
+.image > * {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- Layout: featured (horizontal) ---- */
+.featuredCard {
+  flex-direction: row;
+  align-items: stretch;
+}
+.featuredContent {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--vwds-component-card-gap);
+}
+.featuredImage {
+  flex: 0 0 40%;
+  overflow: hidden;
+  border-radius: 0 var(--vwds-component-card-radius) var(--vwds-component-card-radius) 0;
+  /* bleed até a borda direita/topo/base do card, cancelando o padding do Card. */
+  margin: calc(var(--vwds-component-card-padding) * -1) calc(var(--vwds-component-card-padding) * -1)
+    calc(var(--vwds-component-card-padding) * -1) 0;
+}
+.featuredImage > * {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- Layout: drops ---- */
+.dropsCard {
+  background-color: var(--vwds-component-blog-card-drops-bg);
+  color: var(--vwds-component-blog-card-drops-text);
+  text-align: left;
+}
+.dropsCard:hover,
+.dropsCard:focus-visible {
+  /* Drops troca o bg no hover em vez do delight padrão do Card
+     (borda azul + sombra + translateY). */
+  background-color: var(--vwds-component-blog-card-drops-bg-hover);
+  border-color: transparent;
+  box-shadow: none;
+  transform: none;
+}
+.dropsTitle {
+  align-self: center;
+  text-align: center;
+  font-size: var(--vwds-semantic-typography-h3-font-size);
+}
+.dropsDescription {
+  text-align: left;
+}
+.dropsMeta {
+  color: var(--vwds-component-blog-card-drops-meta);
+}
