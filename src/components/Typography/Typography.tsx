@@ -25,7 +25,10 @@ export type TypographyVariant =
   | 'overline'
   | 'caption'
   | 'editorial-body'
-  | 'card-title';
+  | 'card-title'
+  | 'hero-title'
+  | 'hero-subtitle'
+  | 'feature-block-title';
 
 export type TypographyColor =
   | 'primary'
@@ -50,6 +53,9 @@ const DEFAULT_ELEMENT: Record<TypographyVariant, keyof JSX.IntrinsicElements> = 
   caption: 'span',
   'editorial-body': 'p',
   'card-title': 'h3',
+  'hero-title': 'h1',
+  'hero-subtitle': 'p',
+  'feature-block-title': 'h3',
 };
 
 export interface TypographyProps extends React.HTMLAttributes<HTMLElement> {

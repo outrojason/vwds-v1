@@ -32,3 +32,7 @@ export type {
   FooterColumn,
   FooterSocialItem,
 } from './components/Footer';
+export { Hero } from './components/Hero';
+export type { HeroProps, HeroTitleLine } from './components/Hero';
+export { FeatureBlock } from './components/FeatureBlock';
+export type { FeatureBlockProps, FeatureBlockTitleLine } from './components/FeatureBlock';

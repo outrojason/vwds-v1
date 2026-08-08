@@ -134,6 +134,9 @@
         "regular": {
           "$value": 400
         },
+        "medium": {
+          "$value": 500
+        },
         "bold": {
           "$value": 700
         }
@@ -479,6 +482,33 @@
           "lineHeight": "1.7"
         },
         "$description": "Corpo de texto do blog (Spectral)"
+      },
+      "hero-title": {
+        "$value": {
+          "fontFamily": "{primitive.font.family.brand}",
+          "fontWeight": "{primitive.font.weight.thin}",
+          "fontSize": "100px",
+          "lineHeight": "1"
+        },
+        "$description": "Headline do Hero — validado no Figma: 100px desktop, thin, line-height 100% (1.0)."
+      },
+      "hero-subtitle": {
+        "$value": {
+          "fontFamily": "{primitive.font.family.brand}",
+          "fontWeight": "{primitive.font.weight.regular}",
+          "fontSize": "20px",
+          "lineHeight": "1.5"
+        },
+        "$description": "Subtítulo do Hero — entre subtitle1 (18px) e h4 (24px)."
+      },
+      "feature-block-title": {
+        "$value": {
+          "fontFamily": "{primitive.font.family.brand}",
+          "fontWeight": "{primitive.font.weight.bold}",
+          "fontSize": "28px",
+          "lineHeight": "1.3"
+        },
+        "$description": "Título do FeatureBlock — entre h4 (24px) e h3 (32px), bold (nenhum dos dois é bold)."
       }
     }
   },
@@ -531,6 +561,20 @@
       "drops-bg-hover": {"$value": "{primitive.color.blue.500}", "$type": "color"},
       "drops-text": {"$value": "{primitive.color.ice.50}", "$type": "color"},
       "drops-meta": {"$value": "{primitive.color.darkmode.text-muted}", "$type": "color"}
+    },
+    "hero": {
+      "$description": "Hero da home — layout único, alinhado à esquerda. Headline usa semantic.typography.hero-title (linha a linha); offset é o padding-left das linhas pares no efeito escada.",
+      "offset": {"$value": "380px", "$type": "dimension", "$description": "Escalonamento dramático validado no Figma — aprox. 38% da largura da linha 1. Sem token de porcentagem equivalente (padding-left é relativo ao container, não a um irmão), fixado em px pro copy real do Hero."},
+      "title-gap": {"$value": "20px", "$type": "dimension", "$description": "Gap eyebrow→headline. Não bate com nenhum passo da escala de espaço (16/24)."},
+      "subtitle-max-width": {"$value": "480px", "$type": "dimension"}
+    },
+    "feature-block": {
+      "$description": "FeatureBlock: card com imagem de fundo edge-to-edge + overlay pra legibilidade. Card inteiro clicável.",
+      "min-height": {"$value": "320px", "$type": "dimension"},
+      "padding": {"$value": "{primitive.dimension.space.8}", "$type": "dimension"},
+      "overlay": {"$value": "rgba(3, 14, 35, 0.45)", "$type": "color", "$description": "Overlay escuro sobre a imagem de fundo — navy.900 em 45% de opacidade, pra legibilidade do texto branco."},
+      "fallback-bg": {"$value": "#1A2659", "$type": "color", "$description": "Fundo enquanto não há imagem — navy escuro validado no Figma (não bate exato com nenhum passo de primitive.color.navy)."},
+      "accent-text": {"$value": "{primitive.color.blue.400}", "$type": "color", "$description": "Linha accent do título — blue/400 (#3274FF), diferente do action/primary (blue/500) usado no resto do sistema."}
     },
     "tag": {
       "$description": "Tag/Badge — 3 variantes por uso. category: clicável, estados default/selected/pressed. label: rótulo com ícone, não-clicável. meta: metadado com ícone+separador, não-clicável.",

@@ -96,6 +96,24 @@
   font-weight: var(--vwds-semantic-typography-card-title-font-weight);
   line-height: var(--vwds-semantic-typography-card-title-line-height);
 }
+.variant-hero-title {
+  font-family: var(--vwds-semantic-typography-hero-title-font-family);
+  font-size: var(--vwds-semantic-typography-hero-title-font-size);
+  font-weight: var(--vwds-semantic-typography-hero-title-font-weight);
+  line-height: var(--vwds-semantic-typography-hero-title-line-height);
+}
+.variant-hero-subtitle {
+  font-family: var(--vwds-semantic-typography-hero-subtitle-font-family);
+  font-size: var(--vwds-semantic-typography-hero-subtitle-font-size);
+  font-weight: var(--vwds-semantic-typography-hero-subtitle-font-weight);
+  line-height: var(--vwds-semantic-typography-hero-subtitle-line-height);
+}
+.variant-feature-block-title {
+  font-family: var(--vwds-semantic-typography-feature-block-title-font-family);
+  font-size: var(--vwds-semantic-typography-feature-block-title-font-size);
+  font-weight: var(--vwds-semantic-typography-feature-block-title-font-weight);
+  line-height: var(--vwds-semantic-typography-feature-block-title-line-height);
+}
 
 /* ---- Colors ---- */
 

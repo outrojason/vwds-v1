@@ -1,0 +1,81 @@
+/*
+ * FeatureBlock styles — card com imagem de fundo (position:absolute,
+ * inset:0) + overlay por cima, ou fundo navy fixo sem imagem. Conteúdo
+ * relative pra ficar acima dos dois. Hover: zoom leve na imagem. Zero
+ * literais — tudo referencia component.feature-block.* / primitive.* /
+ * semantic.*.
+ */
+
+.root {
+  position: relative;
+  display: block;
+  min-height: var(--vwds-component-feature-block-min-height);
+  border-radius: var(--vwds-primitive-dimension-radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+}
+.root:focus-visible {
+  outline: 2px solid var(--vwds-component-button-focus-ring);
+  outline-offset: 2px;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+.image > * {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.root:hover .image > *,
+.root:focus-visible .image > * {
+  transform: scale(1.04);
+}
+@media (prefers-reduced-motion: reduce) {
+  .image > * {
+    transition: none;
+  }
+  .root:hover .image > *,
+  .root:focus-visible .image > * {
+    transform: none;
+  }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--vwds-component-feature-block-overlay);
+}
+
+.fallbackBg {
+  position: absolute;
+  inset: 0;
+  background-color: var(--vwds-component-feature-block-fallback-bg);
+}
+
+.content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--vwds-component-feature-block-padding);
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleAccent {
+  color: var(--vwds-component-feature-block-accent-text);
+}
+
+.cta {
+  align-self: flex-start;
+  font-weight: var(--vwds-primitive-font-weight-medium);
+}
